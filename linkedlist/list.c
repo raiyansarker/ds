@@ -9,13 +9,16 @@
  * operations: init, insert_begin, insert_end, find, delete, display.
  */
 
+#include <stdio.h>
+#include <stdlib.h>
+
 #include "list.h"
 
-Node* init() {
+Node* list_init() {
   return NULL;
 }
 
-void insert_begin(Node **head, int data) {
+void list_insert_begin(Node **head, int data) {
   Node *node = (Node*)calloc(1, sizeof(Node));
   node->data = data;
   node->next = *head;
@@ -23,7 +26,7 @@ void insert_begin(Node **head, int data) {
   *head = node;
 }
 
-void insert_end(Node **head, int data) {
+void list_insert_end(Node **head, int data) {
   Node *node = (Node*)calloc(1, sizeof(Node));
   node->data = data;
   node->next = NULL;
@@ -39,7 +42,7 @@ void insert_end(Node **head, int data) {
   curr->next = node;
 }
 
-Node* find(Node *head, int value) {
+Node* list_find(Node *head, int value) {
   Node *curr = head;
   while (curr != NULL) {
     if (curr->data == value) {
@@ -51,7 +54,7 @@ Node* find(Node *head, int value) {
   return NULL;
 }
 
-void delete(Node **head, int value) {
+void list_delete(Node **head, int value) {
   Node *curr = *head, *prev = NULL;
 
   while (curr != NULL && curr->data == value) {
@@ -77,7 +80,7 @@ void delete(Node **head, int value) {
   free(curr);
 }
 
-void display(Node *head) {
+void list_display(Node *head) {
   Node *curr = head;
   while (curr != NULL) {
     printf("%d ", curr->data);

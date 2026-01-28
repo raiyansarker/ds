@@ -1,19 +1,19 @@
 #include "list.h"
 
 int main() {
-  Node *head = init();
+  Node *head = list_init();
 
-  insert_end(&head, 12);
-  insert_end(&head, 15);
-  insert_end(&head, 18);
-  display(head);
+  list_insert_end(&head, 12);
+  list_insert_end(&head, 15);
+  list_insert_end(&head, 18);
+  list_display(head);
 
-  delete(&head, 15);
-  display(head);
+  list_delete(&head, 15);
+  list_display(head);
 
   Node *s = find(head, 18);
   if (s != NULL) s->data = 25;
-  display(head);
+  list_display(head);
 
   return 0;
 }
