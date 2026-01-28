@@ -1,0 +1,16 @@
+# Compiled executables (no extension on Mac/Linux)
+stack
+infinix-postfix
+
+# Object files
+*.o
+
+# Windows executables
+*.exe
+
+# Debug files
+*.dSYM/
+
+# Editor files
+*.swp
+*~
