@@ -6,6 +6,7 @@
  *
  * Description:
  * Singly linked list implementation with basic operations.
+ * operations: init, insert_begin, insert_end, find, delete, display.
  */
 
 #include "list.h"

@@ -2,7 +2,11 @@
 
 This repository contains small implementations of classic data structures in C.  
 It is primarily used for **university assignments and practice**, not for production use.  
-The first module is a **singly linked list** with a minimal, easy-to-read API suitable for learning and experimentation.
+
+Currently implemented modules:
+
+- **Singly linked list** – minimal, easy-to-read API suitable for learning and experimentation
+- **Stack** – LIFO stack implemented on top of a singly linked list-style `Node`
 
 ### Linked List API
 
@@ -33,9 +37,34 @@ void display(Node *head);
 - `delete` – deletes the first node with the given value, if present
 - `display` – prints all node values to stdout, space-separated, followed by a newline
 
+### Stack API
+
+The stack uses the same `Node` layout:
+
+```c
+typedef struct node {
+  int data;
+  struct node *next;
+} Node;
+```
+
+Public functions:
+
+```c
+Node* init();
+void push(Node **head, int data);
+void pop(Node **head);
+void display(Node *head);
+```
+
+- `init` – initializes an empty stack (returns `NULL` head)
+- `push` – pushes a new value onto the top of the stack
+- `pop` – pops (removes) the value at the top of the stack (no-op on empty stack)
+- `display` – prints stack contents from top to bottom, space-separated, followed by a newline
+
 ### Building and Running
 
-From the `linkedlist/` directory, you can build the example program with `gcc`:
+From the `linkedlist/` directory, you can build the linked list example program with `gcc`:
 
 ```bash
 gcc -Wall -Wextra -std=c11 list.c test.c -o list
@@ -55,11 +84,30 @@ This will:
 4. Mutate another via `find`
 5. Print the list state after each operation
 
+From the `stack/` directory, you can build the stack example program with `gcc`:
+
+```bash
+gcc -Wall -Wextra -std=c11 stack.c test.c -o stack
+```
+
+Then run it:
+
+```bash
+./stack
+```
+
+This will:
+
+1. Create an empty stack
+2. Push several integers
+3. Pop some values
+4. Print the stack contents after several operations
+
 ### Future Extensions
 
 Possible future additions to this repository:
 
-- More data structures (stacks, queues, trees, graphs, hash tables)
+- More data structures (queues, trees, graphs, hash tables)
 - Unit tests (e.g., using a lightweight C test framework or simple assertion-based tests)
 - Benchmarks and complexity notes for each operation
 
