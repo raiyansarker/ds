@@ -1,0 +1,33 @@
+## Compiled object files
+*.o
+*.obj
+
+## Compiled binaries / executables
+*.exe
+*.out
+*.app
+*.elf
+*.bin
+
+# Common default executable names from small C projects
+a.out
+main
+test
+list
+
+## Debugging / profiling
+*.dSYM/
+*.pdb
+*.prof
+gmon.out
+
+## Build directories
+build/
+dist/
+bin/
+
+## Editor / OS files
+.DS_Store
+*.swp
+*.swo
+*~
