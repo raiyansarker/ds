@@ -1,39 +1,39 @@
 #include "stack.h"
 
 int main() {
-  Node *head = init();
+  Node *head = stack_init();
 
-  push(&head, 2);
-  push(&head, 3);
-  push(&head, 5);
-  push(&head, 9);
-  push(&head, 19);
+  stack_push(&head, 2);
+  stack_push(&head, 3);
+  stack_push(&head, 5);
+  stack_push(&head, 9);
+  stack_push(&head, 19);
 
-  display(head);
+  stack_display(head);
 
-  pop(&head);
-  display(head);
+  stack_pop(&head);
+  stack_display(head);
 
-  pop(&head);
-  pop(&head);
-  display(head);
+  stack_pop(&head);
+  stack_pop(&head);
+  stack_display(head);
 
-  push(&head, 2);
-  push(&head, 3);
-  push(&head, 5);
-  display(head);
+  stack_push(&head, 2);
+  stack_push(&head, 3);
+  stack_push(&head, 5);
+  stack_display(head);
 
-  pop(&head);
-  pop(&head);
-  pop(&head);
-  pop(&head);
-  pop(&head);
-  pop(&head);
-  pop(&head);
-  pop(&head);
-  pop(&head);
-  pop(&head);
-  display(head);
+  stack_pop(&head);
+  stack_pop(&head);
+  stack_pop(&head);
+  stack_pop(&head);
+  stack_pop(&head);
+  stack_pop(&head);
+  stack_pop(&head);
+  stack_pop(&head);
+  stack_pop(&head);
+  stack_pop(&head);
+  stack_display(head);
 
   return 0;
 }

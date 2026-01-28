@@ -9,13 +9,15 @@
  * operations: push, pop, display.
  */
 
+#include <stdlib.h>
+#include <stdio.h>
 #include "stack.h"
 
-Node* init() {
+Node* stack_init() {
   return NULL;
 }
 
-void push(Node **head, int data) {
+void stack_push(Node **head, int data) {
   Node *node = (Node*)calloc(1, sizeof(Node));
   node->data = data;
   node->next = *head;
@@ -23,7 +25,7 @@ void push(Node **head, int data) {
   *head = node;
 }
 
-void pop(Node **head) {
+void stack_pop(Node **head) {
   Node *curr = *head;
 
   if (curr == NULL) return;
@@ -33,7 +35,7 @@ void pop(Node **head) {
   free(curr);
 }
 
-void display(Node *head) {
+void stack_display(Node *head) {
   Node *curr = head;
   while (curr != NULL) {
     printf("%d ", curr->data);
